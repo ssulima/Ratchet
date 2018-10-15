@@ -127,6 +127,9 @@ class IoServer {
         }
 
         unset($conn->decor);
+
+        $conn->removeAllListeners();
+        gc_collect_cycles();
     }
 
     /**
